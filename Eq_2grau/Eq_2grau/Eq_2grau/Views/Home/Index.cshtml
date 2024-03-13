@@ -17,11 +17,39 @@
         <div style="display: flex; flex-direction: column; gap: 1rem;">
             <p>Especifique por favor, os coeficientes da equação</p>
             <div style="display: flex; flex-direction: column; gap: 1rem; ">
-                <span>A:<input type="text"/></span>
-                <span>B:<input type="text"/></span>
-                <span>C:<input type="text"/></span>
+                <div><span style="margin-right: 1rem;">A:</span><input name="A" type="text"/></div>
+                <div><span style="margin-right: 1rem">B:</span><input name="B" type="text"/></div>
+                <div><span style="margin-right: 1rem">C:</span><input name="C" type="text"/></div>
             </div>
-            <input style="width: 10vw" type="submit" value="Calculates"/>
+            <input type="submit" value="Calculates"/>
         </div>
     </form>
+    
+    
+    @*
+    ler conteudo do viewBag
+    *@
+    <div style="display: flex; flex-direction: column; gap: 1rem">
+        @{
+            if (!String.IsNullOrEmpty(@ViewBag.Mensagem))
+            {
+                <p> @ViewBag.Mensagem</p>
+            }
+        }
+                @{
+                    if (!String.IsNullOrEmpty(@ViewBag.Mensagem))
+                    {
+                        <p> @ViewBag.x1</p>
+                        ;
+                    }
+                }
+        @{
+            if (!String.IsNullOrEmpty(@ViewBag.Mensagem))
+            {
+                <p> @ViewBag.x2</p>
+                ;
+            }
+        }
+
+    </div>
 </div>
